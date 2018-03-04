@@ -1,0 +1,28 @@
+// overflow Unsigned int —>47 -–> 2971215073
+
+#include <stdio.h>
+
+int fibonacci(int n) {
+    unsigned int f=0;
+    if(n==0){
+        return 0;
+    }else if (n==1){
+        return 1;
+    }else{
+        unsigned int a=0;
+        unsigned int b=1;
+        for(int i=2; i<=n; i++){
+            f=(unsigned int)(a+b);
+            a=b;
+            b=f;
+        }
+    }
+    return f;
+};
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    printf("%u", fibonacci(n));
+    return 0;
+}
